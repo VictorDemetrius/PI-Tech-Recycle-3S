@@ -1,13 +1,13 @@
 # TechRecycle
 
 <h4 align="center"> 
-	🚧  TechRecycle 🚀 Em construção...  🚧
+	  TechRecycle 🚀 
 </h4>
 
 ## Descrição do Projeto
 
 O TechRecycle é um projeto interdisciplinar do curso de Desenvolvimento de Software Multplataforma da FATEC Zona Leste.
-projeto consiste em uma plataforma de recompensa por comportamento sustentável que visa incentivar a reciclagem de resíduos eletrônicos.
+O projeto é uma plataforma online para solucionar a dificuldade de encontrar locais para descarte correto de lixo eletrônico e para recarga de veículos elétricos. A ferramenta facilita a localização desses pontos e, adicionalmente, oferece um sistema de recompensas para incentivar a devolução adequada de eletrônicos. O objetivo é promover a sustentabilidade, tornando mais simples para o público adotar práticas responsáveis.
 
 
 ## Tecnologias Envolvidas
@@ -64,6 +64,14 @@ $ run ApiApplication.java
         <img src="https://avatars.githubusercontent.com/u/112758537?v=4" width="100px;" alt=""/><br>
         <sub>
           <b>Reryson Andrade</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/VictorDemetrius">
+        <img src="https://avatars.githubusercontent.com/u/112758537?v=4" width="100px;" alt=""/><br>
+        <sub>
+          <b>Victor Demetrius</b>
         </sub>
       </a>
     </td>
