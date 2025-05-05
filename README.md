@@ -69,7 +69,7 @@ $ run ApiApplication.java
     </td>
     <td align="center">
       <a href="https://github.com/VictorDemetrius">
-        <img src="https://avatars.githubusercontent.com/u/112758537?v=4" width="100px;" alt=""/><br>
+        <img src="[https://avatars.githubusercontent.com/u/112758537?v=4](https://avatars.githubusercontent.com/u/73915190?s=400&u=fb2fa1b20215a3a3d9dd3fbfe6e10e4cc2031ab3&v=4)" width="100px;" alt=""/><br>
         <sub>
           <b>Victor Demetrius</b>
         </sub>
