@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/theme.css">
+    <style>
+      body, html{
+        height: auto;
+      }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mx-2 shadow-sm" style="height:10%;">
+        <div class="container-fluid">
+          <div class="col-sm-2">
+            <a class="navbar-brand" href="#"> <img class="logo-menu" src="../static/imgs/Logo.svg"/> </a>
+          </div>
+          
+          <div class="col-sm-7 d-flex justify-content-start align-items-center text-center">
+            <div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-start" id="navbarNav">
+                <ul class="navbar-nav d-flex align-items-center">
+                  <li class="nav-item ml-0 mr-3" style="transition: 0.5s;">
+                    <a class="nav-link px-3 text-white bg-dark border rounded-pill" href="#"><h6 class="m-0 fw-bold fs-7">Configurações da Conta</h6></a>
+                  </li>
+                  <li class="nav-item mx-3">
+                    <a class="nav-link px-2 text-dark" href="#"><h6 class="m-0 fw-bold fs-7">Ver Promoções Ativas</h6></a>
+                  </li>
+                  <li class="nav-item mx-3">
+                    <span class="d-flex align-items-center justify-content-center" href="#">
+                        <img src="../static/imgs/moedas-verde.png" style="width: 2rem; height: 2rem; z-index: 5"> 
+                        <h6 class="py-1 px-4 text-dark m-0 fw-bold fs-7 border border-dark border-1" style="padding-left: 1.5rem; transform: translateX(-1rem); z-index: 4;">Pontos</h6>
+                        <h6 class="py-1 px-3 text-dark m-0 fw-bold fs-7 border border-dark rounded-right border-left-0 text-right" style="width: 7rem; padding-left: 1.5rem; transform: translateX(-1.3rem);">3000</h6>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 d-flex justify-content-end align-items-center">
+            <h6 class="mx-3 my-0 fw-bold"> Reryson Andrade </h6>
+            <span class="rounded-circle text-white bg-azul-escuro d-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem">
+                <h4 class="m-0 p-0">R</h4>
+            </span>
+            <a href="./telaHome.html"><h6 class="my-0 ml-3 px-2 btn btn-link"> Sair </h6> </a>
+          </div>
+        </div>
+    </nav>
+
+    <main class="bg-azul-escuro d-flex flex-row justify-content-center" style="height: 100%; padding: 5%">
+        <div class="container align-self-start px-2 d-flex flex-column justify-content-between mx-4 text-center" style="width: 15%;">
+            <div class="OPCOES_NORMAIS">
+                <h6 class="bg-white mb-3 p-2 w-100 fw-bold rounded-pill shadow"> Atualizar Dados </h6>
+                <h6 class="bg-white mb-3 p-2 w-100 fw-bold rounded-pill shadow"> Fale Conosco </h6>
+                <h6 class="bg-white mb-3 p-2 w-100 fw-bold rounded-pill shadow"> Suporte </h6>
+            </div>
+            <a href="#" class="fw-bold p-2 w-100 rounded-pill shadow bg-danger text-white fs-6">Excluir Conta</a>
+        </div>
+
+
+        <div class="container bg-white p-4 d-flex flex-column justify-content-start shadow m-0" style="width: 65%;">
+            <div class="d-flex flex-column justify-content-center align-items-start">
+                <h2 class="fw-bold">Atualizar dados </h2>
+                <hr class="border border-dark border-2 opacity-75 w-100">
+            </div>
+
+            <form class="row" method="POST" action="/view/usuario/menu" modelAttribute="DadosFormCadastroUsuario">
+              <div class="col-md-6 d-flex flex-column justify-content-start">
+                  <!-- Canto esquerdo -->
+  
+                  <!-- Explicação -->
+                  <!-- LINHA: é uma div com flex linha. Ele alinha as coisas a esquerda (start) -->
+                  <div class="linha d-flex align-items-start mb-3">
+                    <input type="hidden" value="_" name="id">
+
+                      <!-- INPUT (1): Esse é o primeiro campo da primeira linha, ele dividie metade do espaço com o outro input (w-50)
+                              O input está dentro de um div que alinha flex em coluna, e alinha os items na coluna a esquerda (start) -->
+                      <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Nome</h6>
+                          <input type="text" class="form-control" placeholder="Nome do Usuario" value="_" name="nome">
+                      </div>
+                      
+                      <!-- INPUT (2): Esse é o segundo campo da primeira linha, ele dividie metade do espaço com o outro input (w-50)
+                              O input está dentro de um div que alinha flex em coluna, e alinha os items na coluna a esquerda (start) -->
+                      <div class="input-2 d-flex flex-column align-items-start mx-2 w-50">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">CPF</h6>
+                          <input type="text" class="form-control" placeholder="CPF" value="_" name="cpf">
+                      </div>      
+                  </div>
+  
+  
+                  <div class="linha d-flex align-items-start mb-3">
+                      <div class="input-1 d-flex flex-column align-items-start mx-2 w-25">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">CEP</h6>
+                          <input type="text" class="form-control" placeholder="CEP" value="_" name="cep">
+                      </div>
+                      
+                      <div class="input-2 d-flex flex-column align-items-start mx-2 w-75">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Rua</h6>
+                          <input type="text" class="form-control" placeholder="Rua" value="_" name="logradouro">
+                      </div>
+                  </div>
+                  
+  
+                  <div class="linha d-flex align-items-start mb-3">
+                      <div class="input-1 d-flex flex-column align-items-start mx-2 w-25">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Numero</h6>
+                          <input type="text" class=" form-control" placeholder="Numero" value="_" name="numero">
+                      </div>
+  
+                      <div class="input-1 d-flex flex-column align-items-start mx-2 w-75">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Complemento</h6>
+                          <input type="text" class="form-control" placeholder="Complemento" value="_" name="complemento">
+                      </div>
+                  </div>
+                  
+                  <!-- LINHA só com o Bairro (sobrou espaço)-->
+                  <div class="linha d-flex align-items-start mb-3">
+                      <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Bairro</h6>
+                          <input type="text" class=" form-control" placeholder="Bairro" value="_" name="bairro">
+                      </div>
+                  </div>
+  
+                  <div class="linha d-flex align-items-start mb-3">
+                      <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Cidade</h6>
+                          <input type="text" class=" form-control" placeholder="Cidade" value="_" name="cidade">
+                      </div>
+  
+                      <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                          <h6 class="fw-bold w-25 m-0 ml-1 fs-7">UF</h6>
+                          <select id="uf" class="form-control form-select mb-2" name="uf">
+                              <option value="" disabled selected>UF</option>
+                              <option value="AC">Acre</option>
+                              <option value="AL">Alagoas</option>
+                              <option value="AP">Amapá</option>
+                              <option value="AM">Amazonas</option>
+                              <option value="BA">Bahia</option>
+                              <option value="CE">Ceará</option>
+                              <option value="DF">Distrito Federal</option>
+                              <option value="ES">Espírito Santo</option>
+                              <option value="GO">Goiás</option>
+                              <option value="MA">Maranhão</option>
+                              <option value="MT">Mato Grosso</option>
+                              <option value="MS">Mato Grosso do Sul</option>
+                              <option value="MG">Minas Gerais</option>
+                              <option value="PA">Pará</option>
+                              <option value="PB">Paraíba</option>
+                              <option value="PR">Paraná</option>
+                              <option value="PE">Pernambuco</option>
+                              <option value="PI">Piauí</option>
+                              <option value="RJ">Rio de Janeiro</option>
+                              <option value="RN">Rio Grande do Norte</option>
+                              <option value="RS">Rio Grande do Sul</option>
+                              <option value="RO">Rondônia</option>
+                              <option value="RR">Roraima</option>
+                              <option value="SC">Santa Catarina</option>
+                              <option value="SP">São Paulo</option>
+                              <option value="SE">Sergipe</option>
+                              <option value="TO">Tocantins</option>
+                          </select>
+                      </div>
+                  </div>
+                  
+                  
+              </div>
+              <div class="col-md-6 d-flex flex-column justify-content-between">
+                  <!-- Canto direito -->
+                  <div class="d-flex flex-column justify-content-start">
+                      
+                      <div class="linha d-flex align-items-start mb-3">
+                          <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                              <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Celular</h6>
+                              <input type="tel" class="form-control" placeholder="Telefone" value="_" name="telefone">
+                          </div>
+                      </div>
+  
+                      <div class="linha d-flex align-items-start mb-3">
+                          <div class="input-1 d-flex flex-column align-items-start mx-2 w-100">
+                              <h6 class="fw-bold w-25 m-0 ml-1 fs-7">E-mail</h6>
+                              <input type="email" class="form-control" placeholder="E-Mail" value="_" name="email">
+                          </div>
+                      </div>
+                      
+                      <div class="linha d-flex align-items-start mb-3">
+                          <div class="input-1 d-flex flex-column align-items-start mx-2 w-100">
+                              <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Senha</h6>
+                              <input type="password" class="form-control" placeholder="Senha" value="_" name="password">
+                          </div>
+                          
+                          <div class="input-1 d-flex flex-column align-items-start mx-2 w-100">
+                              <h6 class="fw-bold w-25 m-0 ml-1 fs-7 w-100">Confirmar Senha</h6>
+                              <input type="password" class="form-control" placeholder="Confirmar Senha" value="_">
+                          </div>
+                      </div>
+                      
+                  </div>
+  
+                  <button type="submit" class="btn bg-verde-claro align-self-end mb-2 mx-2 w-50 fw-bold">Concluir Cadastro</button>
+              </div>
+  
+              
+          </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

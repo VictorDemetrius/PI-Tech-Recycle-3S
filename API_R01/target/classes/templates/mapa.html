@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>Document</title>
+    <style>
+      #map {
+        height: 300px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // Inicializando o mapa
+      // var map = L.map("map").setView([0, 0], 13);
+
+      // // Adicionando o provedor de mapa base do OpenStreetMap
+      // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      //   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      //   maxZoom: 18,
+      // }).addTo(map);
+
+      // function geocode(address) {
+      //   var url = "https://nominatim.openstreetmap.org/search";
+      //   var params = {
+      //     q: address,
+      //     format: "json",
+      //   };
+
+      //   // Fazendo a requisição HTTP para a API
+      //   fetch(url + "?" + new URLSearchParams(params))
+      //     .then(function (response) {
+      //       return response.json();
+      //     })
+      //     .then(function (data) {
+      //       // Verificando se a resposta possui resultados
+      //       if (data.length > 0) {
+      //         // Obtendo as coordenadas do primeiro resultado
+      //         var latitude = parseFloat(data[0].lat);
+      //         var longitude = parseFloat(data[0].lon);
+
+      //         // Criando uma localização no mapa com as coordenadas obtidas
+      //         L.marker([latitude, longitude]).addTo(map);
+      //       }
+      //     })
+      //     .catch(function (error) {
+      //       console.error("Erro ao geocodificar o endereço:", error);
+      //     });
+      // }
+
+      // var endereco = "Av. aguia de haia, 2083, São Paulo";
+      // var endereco_1 = "Av. aguia de haia, 2000, São Paulo";
+      // geocode(endereco);
+      // geocode(endereco_1);
+
+      // Adicionando o provedor de mapa base do OpenStreetMap
+      // Adicionando o provedor de mapa base do OpenStreetMap
+var map = L.map("map").setView([0, 0], 12);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxZoom: 18,
+}).addTo(map);
+
+// Array para armazenar os marcadores
+var markers = [];
+
+function geocode(address) {
+  var url = "https://nominatim.openstreetmap.org/search";
+  var params = {
+    q: address,
+    format: "json",
+  };
+
+  // Fazendo a requisição HTTP para a API
+  fetch(url + "?" + new URLSearchParams(params))
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // Verificando se a resposta possui resultados
+      if (data.length > 0) {
+        // Obtendo as coordenadas do primeiro resultado
+        var latitude = parseFloat(data[0].lat);
+        var longitude = parseFloat(data[0].lon);
+
+        // Adicionando marcador ao mapa
+        var marker = L.marker([latitude, longitude]);
+        
+        // Adicionando o marcador ao array de marcadores
+        markers.push(marker);
+
+        // Adicionando marcador ao mapa
+        marker.addTo(map);
+
+        // Ajustando a visão do mapa para incluir todos os marcadores
+        var group = new L.featureGroup(markers);
+        map.fitBounds(group.getBounds());
+      }
+    })
+    .catch(function (error) {
+      console.error("Erro ao geocodificar o endereço:", error);
+    });
+}
+
+var endereco = "Av. aguia de haia, 2083, São Paulo";
+var endereco_1 = "Av. aguia de haia, 2000, São Paulo";
+geocode(endereco);
+geocode(endereco_1);
+
+
+    </script>
+  </body>
+</html>

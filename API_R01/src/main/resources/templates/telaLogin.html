@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/theme.css">
+    <style>
+        body {
+            background-color: #164B60;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            border: 1px solid #000;
+            border-radius: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 400px;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .title {
+            float: right;
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .separator {
+            text-align: center;
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .separator:before,
+        .separator:after {
+            content: "";
+            display: inline-block;
+            border-top: 1px solid black;
+            width: 45%;
+            position: absolute;
+            top: 50%;
+        }
+
+        .separator:before {
+            left: 0;
+        }
+
+        .separator:after {
+            right: 0;
+        }
+
+        .btn-custom {
+            background-color: #4EB6B6;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #357f7f;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="./telaHome.html"> <img src="../static/imgs/Logo.svg" class="logo" alt="Logo"> </a>
+            <h4 class="fw-bold"> Fazer Login</h4>
+        </div>
+
+        <div class="clearfix mb-3"></div>
+        
+        <form id="login-form" method="POST" action="/view/login" modelAttribute="DadosCredenciaisUsuario">
+            <div class="form-group">
+                <label class="fw-bold my-1" for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" name="email">
+            </div>
+            <div class="form-group">
+                <label class="fw-bold my-1" for="password">Senha</label>
+                <input type="password" class="form-control" id="password" placeholder="Digite sua senha" name="password">
+            </div>
+
+            <!--
+            <button type="submit" class="btn w-100 bg-verde-claro align-self-end mb-2 fw-bold">Fazer Login</button>
+            -->
+            <a href="../templates/menuAdmin.html" class="btn w-100 bg-verde-claro align-self-end mb-2 fw-bold">Fazer Login</a>
+        </form>
+
+        <div class="separator">ou</div>
+        <button class="btn bg-azul-claro btn-block fw-bold">Cadastre-se como cliente</button>
+        <button class="btn bg-azul-claro btn-block fw-bold">Cadastre-se como loja</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../static/css/theme.css" />
+    <link rel="stylesheet" href="../../static/css/styleConfiguracaoUsuario.css" />
+
+    <title>Atualizar Dados</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm" style="height: 10%">
+      <div class="container-fluid">
+        <div class="col-sm-2">
+          <a class="navbar-brand" href="#">
+            <img class="logo-menu" src="../../static/imgs/Logo.svg" />
+          </a>
+        </div>
+
+        <div class="col-sm-7 d-flex justify-content-start align-items-center text-center">
+          <div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-start" id="navbarNav">
+              <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item ml-0 mr-3" style="transition: 0.5s">
+                  <a class="nav-link px-3 text-white bg-dark border rounded-pill" href="#"><h6 class="m-0 fw-bold fs-7">Configurações da Conta</h6></a>
+                </li>
+                <li class="nav-item mx-3">
+                  <a class="nav-link px-2 text-dark" href="#"><h6 class="m-0 fw-bold fs-7">Ver Promoções Ativas</h6></a>
+                </li>
+                <li class="nav-item mx-3">
+                  <span class="d-flex align-items-center justify-content-center" href="#">
+                    <img src="../../static/imgs/moedas-verde.png" style="width: 2rem; height: 2rem; z-index: 5" />
+                    <h6 class="py-1 px-4 text-dark m-0 fw-bold fs-7 border border-dark border-1" style="padding-left: 1.5rem; transform: translateX(-1rem); z-index: 4">Pontos</h6>
+                    <h6 class="py-1 px-3 text-dark m-0 fw-bold fs-7 border border-dark rounded-right border-left-0 text-right" style="width: 7rem; padding-left: 1.5rem; transform: translateX(-1.3rem)">3000</h6>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 d-flex justify-content-end align-items-center">
+          <h6 class="mx-3 my-0 fw-bold">Reryson Andrade</h6>
+          <span class="rounded-circle text-white bg-azul-escuro d-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem">
+            <h4 class="m-0 p-0">R</h4>
+          </span>
+          <a href="../telaLogin.html"><h6 class="my-0 ml-3 px-2 btn btn-link">Sair</h6> </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="bg-azul-escuro d-flex flex-row justify-content-center">
+      <div class="container bg-white p-4 d-flex flex-column justify-content-start shadow m-0" style="width: 80%">
+        <div class="d-flex flex-column justify-content-center">
+          <h3 class="fw-bold mx-3">Atualizar dados do seu perfil</h3>
+          <hr class="border border-dark border-2 opacity-75 w-100 mb-3" />
+        </div>
+        <div class="atualizar-dados">
+          <form class="form-atualizar-dados">
+            <div class="nome">
+              <h6 class="fw-bold w-25 mx-1">Nome</h6>
+              <input type="text" class="form-control" id="nome" placeholder="Novo Nome" />
+            </div>
+
+            <div class="cpf">
+              <h6 class="fw-bold w-25 mx-1">Cpf</h6>
+              <input type="text" class="form-control" id="cpf" placeholder="Novo CPF" />
+            </div>
+
+            <div class="rua">
+              <h6 class="fw-bold w-25 mx-1">Rua</h6>
+              <input type="text" class="form-control" id="rua" placeholder="Nova Rua" />
+            </div>
+
+            <div class="cep">
+              <h6 class="fw-bold w-25 mx-1">Cep</h6>
+              <input type="text" class="form-control" id="cep" placeholder="Novo CEP" />
+            </div>
+
+            <div class="numero">
+              <h6 class="fw-bold w-25 mx-1">Número</h6>
+              <input type="text" class="form-control" id="numero" placeholder="Novo Número" />
+            </div>
+
+            <div class="complemento">
+              <h6 class="fw-bold w-25 mx-1">Complemento</h6>
+              <input type="text" class="form-control" id="complemento" placeholder="Novo Complemento" />
+            </div>
+
+            <div class="bairro">
+              <h6 class="fw-bold w-25 mx-1">Bairro</h6>
+              <input type="text" class="form-control" id="bairro" placeholder="Novo Bairro" />
+            </div>
+
+            <div class="cidade">
+              <h6 class="fw-bold w-25 mx-1">Cidade</h6>
+              <input type="text" class="form-control" id="cidade" placeholder="Novo Cidade" />
+            </div>
+
+            <div class="uf">
+              <h6 class="form-label fw-bold w-25 mx-1">UF</h6>
+              <select id="uf" class="form-select">
+                <option value="" disabled selected>Selecionar UF</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </div>
+
+            <div class="celular">
+              <h6 class="fw-bold w-25 mx-1">Celular</h6>
+              <input type="tel" class="form-control" id="telefone" placeholder="Novo Telefone" />
+            </div>
+
+            <div class="email">
+              <h6 class="fw-bold w-25 mx-1">E-Mail</h6>
+              <input type="email" class="form-control" id="email" placeholder="Novo E-Mail" />
+            </div>
+
+            <div class="nova-senha">
+              <h6 class="fw-bold mx-1">Nova Senha</h6>
+              <input type="password" class="form-control" id="password" placeholder="Nova Senha" />
+            </div>
+
+            <div class="confirmar-senha">
+              <h6 class="fw-bold mx-1">Confirmar Senha</h6>
+              <input type="password" class="form-control" placeholder="Confirmar Nova Senha" />
+            </div>
+            <a type="button" class="btn bg-verde-claro fw-bold" id="salvarDados">Atualizar Dados</a>
+            <a type="button" class="btn bg-danger fw-bold" id="excluirDados">Excluir Conta</a>
+          </form>
+
+          <div class="dados-usuario">
+            <div>
+              <p class="output-nome">Nome:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-cpf">Cpf:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-rua">Rua:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-cep">Cep:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-numero">Número:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-complemento">Complemento:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-bairro">Bairro:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-cidade">Cidade:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-uf">UF:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-celular">Celular:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+            <div>
+              <p class="output-email">E-mail:</p>
+              <hr class="border border-dark-subtle border-2 opacity-100 w-100" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../../static/js/usuario/AlterarCadastroDeUsuario.js"></script>
+    <script src="../../static/js/utilitarios/notificacao.js"></script>
+    <script src="../../static/js/usuario/deletarUsuario.js"></script>
+  </body>
+</html>

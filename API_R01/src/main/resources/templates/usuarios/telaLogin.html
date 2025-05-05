@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../static/css/theme.css" />
+    <link rel="stylesheet" href="../../static/css/styleLogin.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="d-flex justify-content-between align-items-center">
+        <a href="#"> <img src="../../static/imgs/Logo.svg" class="logo" alt="Logo" /> </a>
+        <h4 class="fw-bold">Fazer Login</h4>
+      </div>
+      <div class="clearfix mb-3"></div>
+      <form id="login-form">
+        <div class="form-group">
+          <label class="fw-bold my-1" for="email">E-mail</label>
+          <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" />
+        </div>
+        <div class="form-group">
+          <label class="fw-bold my-1" for="password">Senha</label>
+          <input type="password" class="form-control" id="password" placeholder="Digite sua senha" />
+        </div>
+        <div class="form-group">
+          <div class="float-left">
+            <a class="botao" data-url="../template/esqueciMinhaSenha.html">Esqueci minha senha</a>
+          </div>
+          <div class="float-right">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="keep-logged" />
+              <span class="custom-control-label">Manter logado</span>
+            </label>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <button type="button" class="btn bg-verde-claro btn-block fw-bold" id="fazerLogin">Fazer Login</button>
+      </form>
+      <div class="separator">ou</div>
+      <button class="botao btn bg-azul-claro btn-block fw-bold" data-url="./cadastroUsuario.html">Cadastre-se como cliente</button>
+      <button class="botao btn bg-azul-claro btn-block fw-bold" data-url="./cadastroLoja.html">Cadastre-se como loja</button>
+    </div>
+    <div id="modal" style="display: none">
+      <p>Usuário Logado com sucesso!</p>
+    </div>
+    <script src="../../static/js/utilitarios/notificacao.js"></script>
+    <script src="../../static/js/usuario/NovoLogin.js"></script>
+  </body>
+</html>

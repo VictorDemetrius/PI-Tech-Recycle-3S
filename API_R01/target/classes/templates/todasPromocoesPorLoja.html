@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/theme.css" />
+    <link rel="stylesheet" href="../static/css/styleTodasPromocoesPorLoja.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <title>todasPromocoesPorLoja</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mx-2 shadow-sm" style="height: 10%">
+      <div class="container-fluid">
+        <div class="col-sm-2">
+          <a class="navbar-brand" href="#">
+            <img class="logo-menu" src="../static/imgs/Logo.svg" />
+          </a>
+        </div>
+
+        <div class="col-sm-7 d-flex justify-content-start align-items-center text-center">
+          <div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-start" id="navbarNav">
+              <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item ml-0 mr-3" style="transition: 0.5s">
+                  <a class="botao nav-link px-2 text-dark" href="./configuracaoUsuario.html"><h6 class="m-0 fw-bold fs-7" data-url="../template/configuracaoUsuario.html">Configurações da Conta</h6></a>
+                </li>
+                <li class="nav-item mx-3">
+                  <a class="nav-link px-2 text-white bg-dark border rounded-pill" href="#"><h6 class="m-0 fw-bold fs-7">Ver Promoções Ativas</h6></a>
+                </li>
+                <li class="nav-item mx-3">
+                  <span class="d-flex align-items-center justify-content-center" href="#">
+                    <img src="../static/imgs/moedas-verde.png" style="width: 2rem; height: 2rem; z-index: 5" />
+                    <h6 class="py-1 px-4 text-dark m-0 fw-bold fs-7 border border-dark border-1" style="padding-left: 1.5rem; transform: translateX(-1rem); z-index: 4">Pontos</h6>
+                    <h6 class="py-1 px-3 text-dark m-0 fw-bold fs-7 border border-dark rounded-right border-left-0 text-right" style="width: 7rem; padding-left: 1.5rem; transform: translateX(-1.3rem)">3000</h6>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 d-flex justify-content-end align-items-center">
+          <h6 class="mx-3 my-0 fw-bold">Reryson Andrade</h6>
+          <span class="rounded-circle text-white bg-azul-escuro d-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem">
+            <h4 class="m-0 p-0">R</h4>
+          </span>
+          <a href="./telaHome.html"><h6 class="my-0 ml-3 px-2 btn btn-link">Sair</h6> </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid p-0">
+      <div class="barraPesquisa bg-azul-claro">
+        <img src="../static/imgs/img-loja.svg" class="logo-loja" />
+        <p class="nome-da-loja">Saúde Exata Suplementos</p>
+        <div class="mini-maps"  id="map"></div>
+        <p class="pesquisarLabel">Pesquisar nesta loja</p>
+        <div class="pesquisarInput">
+          <div class="input-group">
+            <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" id="dropdown-toggle-button" aria-expanded="false">Últimas lojas pesquisadas</button>
+            <ul class="dropdown-menu" id="custom-dropdown-menu">
+              <li><a class="dropdown-item" href="#">Loja 01</a></li>
+              <li><a class="dropdown-item" href="#">Loja 02</a></li>
+              <li><a class="dropdown-item" href="#">Loja 03</a></li>
+              <li><a class="dropdown-item" href="#">Loja 04</a></li>
+            </ul>
+            <input type="text" class="form-control border border-black" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="bg-azul-escuro p-4">
+      <div class="container-fluid">
+        <div class="content-todas-promocoes">
+          <div class="texto-promocoes">
+            <p class="textoPromocoesAtivas">Veja todas promoções desta loja</p>
+            <div class="container-ordenar-select">
+              <p class="texto-Ordenar">Ordenar por:</p>
+              <select class="form-select ordenar-select" aria-label="Default select example">
+                <option selected>Relevância</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cards-tickets">
+            <!-- botão promoção -->
+            <button class="botao-ticket">
+              <div class="ticket">
+                <div class="icone">
+                  <p class="iconeLoja"></p>
+                  <div class="tituloloja">
+                    <p class="titulo">Promoção</p>
+                    <p class="loja">Nome da Loja</p>
+                  </div>
+                </div>
+                <div class="promocaoPontos">
+                  <p class="promocao">Receba 5% de desconto em qualquer compra</p>
+                  <p class="pontos">3500 Pontos</p>
+                </div>
+              </div>
+            </button>
+            <!-- botão promoção -->
+            <button class="botao-ticket">
+              <div class="ticket">
+                <div class="icone">
+                  <p class="iconeLoja"></p>
+                  <div class="tituloloja">
+                    <p class="titulo">Promoção</p>
+                    <p class="loja">Nome da Loja</p>
+                  </div>
+                </div>
+                <div class="promocaoPontos">
+                  <p class="promocao">Receba 5% de desconto em qualquer compra</p>
+                  <p class="pontos">3500 Pontos</p>
+                </div>
+              </div>
+            </button>
+            <!-- botão promoção -->
+            <button class="botao-ticket">
+              <div class="ticket">
+                <div class="icone">
+                  <p class="iconeLoja"></p>
+                  <div class="tituloloja">
+                    <p class="titulo">Promoção</p>
+                    <p class="loja">Nome da Loja</p>
+                  </div>
+                </div>
+                <div class="promocaoPontos">
+                  <p class="promocao">Receba 5% de desconto em qualquer compra</p>
+                  <p class="pontos">3500 Pontos</p>
+                </div>
+              </div>
+            </button>
+            <!-- botão promoção -->
+            <button class="botao-ticket">
+              <div class="ticket">
+                <div class="icone">
+                  <p class="iconeLoja"></p>
+                  <div class="tituloloja">
+                    <p class="titulo">Promoção</p>
+                    <p class="loja">Nome da Loja</p>
+                  </div>
+                </div>
+                <div class="promocaoPontos">
+                  <p class="promocao">Receba 5% de desconto em qualquer compra</p>
+                  <p class="pontos">3500 Pontos</p>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="cards-tickets">
+            <!-- botão promoção -->
+            <button class="botao-ticket">
+              <div class="ticket">
+                <div class="icone">
+                  <p class="iconeLoja"></p>
+                  <div class="tituloloja">
+                    <p class="titulo">Promoção</p>
+                    <p class="loja">Nome da Loja</p>
+                  </div>
+                </div>
+                <div class="promocaoPontos">
+                  <p class="promocao">Receba 5% de desconto em qualquer compra</p>
+                  <p class="pontos">3500 Pontos</p>
+                </div>
+              </div>
+            </button>
+            <!-- botão promoção -->
+            <button class="botao-ticket">
+              <div class="ticket">
+                <div class="icone">
+                  <p class="iconeLoja"></p>
+                  <div class="tituloloja">
+                    <p class="titulo">Promoção</p>
+                    <p class="loja">Nome da Loja</p>
+                  </div>
+                </div>
+                <div class="promocaoPontos">
+                  <p class="promocao">Receba 5% de desconto em qualquer compra</p>
+                  <p class="pontos">3500 Pontos</p>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="paginacao">
+            <ul class="pagination m-0 black">
+              <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-azul-claro p-3">
+      <p class="footer-loja">Se interessou? Veja todas as promoções disponíveis especificas de alguma loja ou conheça as lojas parceiras!</p>
+      <button type="button" class="btn-todas-promocoes bg-azul-claro">Ver todas as promoções de alguma loja</button>
+      <button type="button" class="btn-todas-lojas-parceiras bg-azul-claro">Ver todas as lojas parceiras</button>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../static/js/RederizadorDeMapa.js"></script>
+  </body>
+</html>

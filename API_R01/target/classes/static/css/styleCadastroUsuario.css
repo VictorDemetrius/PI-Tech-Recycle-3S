@@ -1,0 +1,74 @@
+.formularioCad{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 70px);
+    row-gap: 10px;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+#formularioCadastro{
+
+}
+
+
+.nome{
+    grid-column:1/2;
+}
+
+.cpf{
+    grid-column: 1/2;
+}
+
+.cep{
+    grid-column: 1/2;
+}
+
+.rua{
+    grid-column: 1/2;
+}
+
+.numero{
+    grid-column: 1/2;
+}
+
+.bairro{
+    grid-column: 1/2;
+}
+
+.complemento{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.cidade{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.celular{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.email{
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.senha{
+    grid-column: 2/3;
+    grid-row: 5/6;
+}
+
+.confirmacaoSenha{
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+
+.btn-concluir-cad{
+    margin: 10px 20px 10px 20px;
+    grid-column: 2/3;
+}

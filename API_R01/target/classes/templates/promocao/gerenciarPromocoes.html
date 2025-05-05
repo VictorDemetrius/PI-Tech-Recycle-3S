@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/theme.css">
+    <style>
+      body, html{
+				background-color: var(--cor-azul-escuro);
+      }
+
+			a.btn{
+				text-decoration: none !important;
+			}
+
+			.botao-com-icone{
+				display: grid;
+				grid-template-columns: auto 50px;
+				align-items: center;
+				border-radius: 15px;
+			}
+
+				.botao-com-icone:hover,
+				.botao-com-icone:hover > h6{
+					border-radius: 15px;
+					background-color: var(--cor-azul-claro) !important;
+				}
+
+			.lista-estatisticas-1{
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1.5rem;
+			}
+
+			.card-stats{
+        padding: 1rem 0.5rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        border-radius: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+				text-align: center;
+      }
+
+			.btn-acao-loja{
+				box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+			}
+
+			
+
+			#grafico{
+				box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+				border-radius: 15px;
+				padding: 1rem;
+			}
+    </style>
+    <title>Loja</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-3 shadow-sm bg-white" style="height:12%;">
+        <div class="container-fluid">
+          <div class="col-sm-2">
+            <a class="navbar-brand" href="#"> <img class="logo-menu" alt="logo do site" src="../../static/imgs/Logo.svg"/> </a>
+          </div>
+          
+          <div class="col-sm-7 d-flex justify-content-start align-items-center text-center">
+            <div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-start" id="navbarNav">
+                <ul class="navbar-nav d-flex align-items-center">
+                	<li class="nav-item mx-3">
+                  	<a class="nav-link px-2 text-dark" href="#"><h6 class="m-0 fw-bold fs-7">Início [Dados]</h6></a>
+            			</li>
+                  <li class="nav-item ml-0 mr-3" style="transition: 0.5s;">
+                    <a class="nav-link px-2 text-dark" href="#"><h6 class="m-0 fw-bold fs-7">Configurações da Conta</h6></a>
+                  </li>
+                  <li class="nav-item dropdown mx-3 fs-7">
+                    <a class="dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">Promoções</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Minhas Promoções</a></li>
+                      <li><a class="dropdown-item" href="#">Criar Nova Promoção</a></li>
+                    </ul>
+                  </li>
+										<li class="nav-item ml-0 mr-3" style="transition: 0.5s;">
+                    <a class="nav-link px-2 text-dark" href="../../templates/empresa/adicionarPontos.html"><h6 class="m-0 fw-bold fs-7">Lançar Pontos</h6></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 d-flex justify-content-end align-items-center">
+            <h6 class="mx-3 my-0 fw-bold"> Reryson Andrade </h6>
+            <span class="rounded-circle text-white bg-azul-escuro d-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem">
+                <h4 class="m-0 p-0">R</h4>
+            </span>
+            <a href="../../templates/telaHome.html"><h6 class="my-0 ml-3 px-2 btn btn-link"> Sair </h6> </a>
+          </div>
+        </div>
+    </nav>
+
+		<!-- Bem vindo -->
+		<div class="bg-azul-escuro w-100 d-flex flex-column justify-content-start align-items-center my-4 px-4">
+      <div class="w-100 d-flex flex-column justify-content-center align-items-center">
+          <div class="col-sm-10 text-white d-flex flex-column justify-content-start mt-4 px-5">
+            <span class="d-flex"> <h4 class="fw-bold"> Bem Vindo(a) </h4> <h4 id="#BemVindoNome" class="mx-3">Jingle Calçados</h4></span>
+						<h6> Esperamos que esteja bem! Gerencie suas promoções ou crie novas</h6>
+          </div>
+
+			<div class="col-sm-10 text-white d-flex justify-content-start mt-4 px-5">
+				<!-- botão nova promo -->
+				<a class="btn nav-link" href="../../templates/promocao/cadastrarPromocoesPorLoja.html">
+					<span class="btn-acao-loja text-start botao-com-icone w-auto bg-verde-claro">
+						<h6 class="align-self-center m-0 text-body fw-bold py-3 px-4">Criar Promoção</h6>
+						<h3 class="justify-self-center fw-bolder m-0 p-2">&#10133;</h3>
+					</span>
+				</a>
+
+				<!-- botão minhas promos -->
+				<a class="btn nav-link" href="../../templates/promocao/cadastrarPromocoesPorLoja.html">
+					<span class="btn-acao-loja text-start botao-com-icone w-auto bg-verde-claro">
+						<h6 class="align-self-center m-0 text-body fw-bold py-3 px-4">Minhas Promoções</h6>
+						<h3 class="justify-self-center fw-bolder m-0 p-2">&#128269;</h3>
+					</span>
+				</a>
+
+				<!-- botão lançar pontos -->
+				<a class="btn nav-link" href="../../templates/empresa/adicionarPontos.html">
+					<span class="btn-acao-loja text-start botao-com-icone w-auto bg-verde-claro">
+						<h6 class="align-self-center m-0 text-body fw-bold py-3 px-4">Lançar Pontos</h6>
+						<h3 class="justify-self-center fw-bolder m-0 p-2">&#x1F31F;</h3>
+					</span>
+				</a>
+			</div>
+
+        </div> 
+      </div>
+    </div>
+
+		<hr class="align-self-center border border-white border-3 opacity-50 w-75 my-3">
+
+		<div class="bg-azul-escuro w-100 d-flex flex-column justify-content-start align-items-center my-4 px-4">
+      <div class="w-100 d-flex flex-row justify-content-center align-items-start">
+          <div class="col-sm-10 text-white d-flex flex-column mt-1 align-items-center" style="padding: 0 5rem;">
+            <h3 class="fw-bold mb-4"> Estatísticas </h3>
+						<div class="lista-estatisticas-1 w-100">
+
+							<div class="card-stats bg-white text-body">
+								<h5 class="fw-bolder texto-azul-escuro px-3 align-self-center">Total de Promoções</h5>
+								<h4 id="NumTotalPromocoes" class="fw-normal text-black py-3 text-center">0</h4>
+							</div>
+							
+							<div class="card-stats bg-white text-body">
+								<h5 class="fw-bolder texto-azul-escuro px-3 align-self-center">Total de Vendas</h5>
+								<h4 id="NumTotalVendas" class="fw-normal text-black py-3 text-center">0</h4>
+							</div>
+
+							<div class="card-stats bg-white text-body">
+								<h5 class="fw-bolder texto-azul-escuro px-3 align-self-center">Vendas deste Mês</h5>
+								<h4 id="NumVendasMes" class="fw-normal text-black py-3 text-center">0</h4>
+							</div>
+
+							<div class="card-stats bg-white text-body">
+								<h5 class="fw-bolder texto-azul-escuro px-3 align-self-center">Lixo Coletado (Kg)</h5>
+								<h4 id="NumLixoColec" class="fw-normal text-black py-3 text-center">--</h4>
+							</div>
+						</div>
+          </div>
+			</div>
+		</div>
+
+		<div class="bg-azul-escuro w-100 d-flex flex-column justify-content-start align-items-center my-5 px-4">
+      <div class="w-100 d-flex flex-row justify-content-center align-items-start">
+        <div id="box-stats" class="col-sm-10 text-white d-flex flex-column mt-1 align-items-center" style="padding: 0 5rem;">
+					<div class="coluna-grafico d-flex flex-column align-items-center justify-content-center col">
+						<h4 class="fw-bold mb-3"> Relação de Vendas dos Ultimos 6 Meses </h4>
+						<canvas id="grafico" class="bg-white" style="width:100%;"></canvas>
+					</div>
+        </div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+    <div class="bg-preto w-100 d-flex flex-column justify-content-start align-items-center">
+      <div class="w-100 d-flex flex-row justify-content-center align-items-center" style="padding: 3rem 3rem;">
+        <div class="col-sm-6 text-white d-flex flex-column align-items-center mx-4">
+          <h6 class="m-0"> TECH RECYCLE &#169;. Todos os Direitos Reservados. 2023</h6>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../../static/js/utilitarios/notificacao.js"></script>
+	<script src="../../static/js/promocao/menuLoja.js"></script>
+</body>
+</html>

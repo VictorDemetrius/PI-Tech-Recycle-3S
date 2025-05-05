@@ -1,0 +1,13 @@
+@keyframes notific_barra_progresso {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.notific_barra_progresso{
+    animation: notific_barra_progresso 5s ease-in-out forwards;
+}

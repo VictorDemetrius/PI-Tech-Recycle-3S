@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../static/css/theme.css">
+        <title> TESTE </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                height: 100%;
+                width: 100%;
+            }
+
+            .card-list{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: auto;
+                gap: 1%;
+            }
+
+            .card{
+                width: 100%;
+                height: auto;
+                margin: 1%;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                gap: 10px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+
+            /*************************************/
+
+
+            .promo-foto-emp{
+                grid-column: 1 / 3;
+                grid-row: 1;
+                height: 64px;
+                width: 64px;
+                align-self: center;
+                background-color: #c2c2c2;
+                box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            }
+
+            .promo-nome-emp{
+                grid-column: 3 / 6;
+                grid-row: 1 / 2;
+                align-self: center;
+                justify-self: center;
+                text-align: start;
+            }
+
+            .promo-descricao{
+                grid-column: 1 / 6;
+                grid-row: 2 / 4;
+                align-self: center;
+                justify-self: center;
+                text-align: center;
+            }
+
+            .promo-preco{
+                grid-column: 1 / 6;
+                grid-row: 4 / 5;
+                align-self: center;
+                justify-self: center;
+                text-align: center;
+                /**/
+                box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                padding: 2vh 5vh;
+                background-color: var(--cor-verde-claro);
+                transition: 0.1s;
+                border-radius: 2vh;
+            }
+
+            .promo-preco:hover{
+                background-color: var(--cor-azul-normal);
+                color: #ffffff;
+                cursor: pointer;
+                transition: 0.3s;
+                
+            }
+
+
+        </style>
+    </head>
+    <body class="bg-azul-escuro">
+        <div class="container-fluid d-flex flex-row">
+            <div id="lista-cards" class="card-list m-5 p-5 bg-white w-100">
+                <div class="card p-4">
+                    <img class="promo-foto-emp rounded-circle " alt="_" src="../../static/imgs/Logo.svg">
+                    <h6 class="promo-nome-emp fs-7"> TECH RECYCLE - CUPONS DE DESCONTO</h6>
+                    <h6 class="promo-descricao"> Receba 5% de Desconto na compra de produtos de higiene pessoal e limpeza </h6>
+                    <h6 class="promo-preco">3.200 Pontos</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-row mb-5">
+            <div id="cadastar-promo" class="m-5 p-5 bg-white w-100">
+                <h3 class="mb-5"> NOVA PROMOCAO </h3>
+                <form class="d-flex flex-column w-100" method="post" action="http://localhost:8080/promocao" modelAttribute="Promocao">
+                    <div class="d-flex w-75 align-items-center mb-3">
+                        <label class="w-25" for="descricao"> Descrição Da Promoção </label>
+                        <input class="w-75 form-control" id="descricao" type="text" name="descricao">
+                    </div>
+                    
+                    <div class="d-flex w-75 align-items-center mb-3">
+                        <label class="w-25" for="preco"> Preço Da Promoção</label> 
+                        <input class="w-25 form-control" id="preco" type="text" name="preco">
+                    </div>
+                    
+                    <input type="hidden" id="empresa" name="empresa_id" value="1">
+    
+                    <a id="btn_submit" type="submit" class="w-25 mt-3 form-control btn bg-verde-claro"> Criar </a>
+                </form>
+            </div>
+            
+        </div>
+        <script src="../../static/js/promocao/buscarPromocoesPorEmpresa.js"></script>
+        <script src="../../static/js/promocao/cadastroPromocao.js"></script>
+    </body>
+</html>

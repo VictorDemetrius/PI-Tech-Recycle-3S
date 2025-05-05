@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/theme.css">
+    <link rel="stylesheet" href="../../static/css/animations.css">
+    <style>
+      body, html{
+        height: 100%;
+      }
+    </style>
+    <title>Gerenciar Cooperativas</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mx-2 shadow-sm" style="height:10%;">
+      <div class="container-fluid">
+        <div class="col-sm-3 d-flex align-items-center">
+            <a class="navbar-brand" href="#"> <img class="logo-menu" alt="Logo da Tech Recycle" src="../../static/imgs/Logo.svg"/> </a>
+            <h4 class="m-0 fw-bold"> ADMIN </h4>
+          </div>
+          
+          <div class="col-sm-6 d-flex justify-content-start align-items-center text-center">
+            <div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-start" id="navbarNav">
+                <ul class="navbar-nav d-flex align-items-center">
+                  <li><a class="nav-link text-dark" href="../menuAdmin.html">Estatísticas</a></li>
+                	<!---->
+                  <li class="nav-item dropdown mx-3">
+                    <a class="dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuário</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="../usuarios/gerenciarUsuarios.html">Lista de Usuários</a></li>
+                    </ul>
+                  </li>
+                  <!---->
+                  <li class="nav-item dropdown mx-3">
+                    <a class="dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lojas</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="../empresa/gerenciarEmpresa.html">Lista de Lojas</a></li>
+                      <li><a class="dropdown-item" href="#">Solicitações de Validação</a></li>
+                      <li><a class="dropdown-item" href="../empresa/cadastroEmpresa.html">Cadastrar nova Loja</a></li>
+                    </ul>
+                  </li>
+                  <!---->
+                  <li class="nav-item dropdown mx-3">
+                    <a class="dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cooperativas</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="./gerenciarCooperativas.html">Lista de Cooperativas</a></li>
+                      <li><a class="dropdown-item" href="./cadastroCooperativa.html">Cadastrar nova Cooperativa</a></li>
+                      <li><a class="dropdown-item" href="./listaCooperativaDesativada.html">Cooperativas Desativadas</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 d-flex justify-content-end align-items-center">
+            <h6 class="mx-3 my-0 fw-bold"> Ulisses Antonelli </h6>
+            <span class="rounded-circle text-white bg-azul-claro d-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem">
+                <h4 class="m-0 p-0">U</h4>
+            </span>
+            <a href="#"><h6 class="my-0 ml-3 px-2 btn btn-link"> Sair </h6> </a>
+          </div>
+      </div>
+    </nav>
+
+    <main class="h-auto w-100 bg-azul-escuro p-5">
+        <form id="form_alteracao" class="col-md-7 bg-white border rounded rounded-5 p-3 d-flex flex-column justify-content-start align-items-center">
+            <h2 class="fw-bold mt-3 mb-4 px-3 text-dark">Alteração de Dados da Cooperativa</h2>
+            <div class="col-md-10 p-1 mb-3 d-flex flex-column justify-content-start mb-3">
+                <input id="id" type="hidden" name="id"/>
+
+                <!-- LINHA: é uma div com flex linha. Ele alinha as coisas a esquerda (start) -->
+                <div class="linha d-flex align-items-start mb-3">
+
+                    <!-- INPUT (1): Esse é o primeiro campo da primeira linha, ele dividie metade do espaço com o outro input (w-50)
+                            O input está dentro de um div que alinha flex em coluna, e alinha os items na coluna a esquerda (start) -->
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Nome</h6>
+                        <input id="nome" type="text" class="form-control" placeholder="Nome da Cooperativa" name="nome">
+                    </div>
+                    
+                    <!-- INPUT (2): Esse é o segundo campo da primeira linha, ele dividie metade do espaço com o outro input (w-50)
+                            O input está dentro de um div que alinha flex em coluna, e alinha os items na coluna a esquerda (start) -->
+                    <div class="input-2 d-flex flex-column align-items-start mx-2 w-50">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">CNPJ</h6>
+                        <input id="cnpj" type="text" class="form-control" placeholder="CNPJ" name="cnpj">
+                    </div>      
+                </div>
+
+                <div class="linha d-flex align-items-start mb-3">
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-25">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">CEP</h6>
+                        <input id="cep" type="text" class="form-control" placeholder="CEP" name="cep">
+                    </div>
+                    
+                    <div class="input-2 d-flex flex-column align-items-start mx-2 w-75">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Rua</h6>
+                        <input id="logradouro" type="text" class="form-control" placeholder="Rua" name="logradouro">
+                    </div>
+                </div>
+
+                <div class="linha d-flex align-items-start mb-3">
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-25">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Numero</h6>
+                        <input id="numero" type="text" class=" form-control" placeholder="Numero" name="numero">
+                    </div>
+
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-75">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Complemento</h6>
+                        <input id="complemento" type="text" class="form-control" placeholder="Complemento" name="complemento">
+                    </div>
+                </div>
+
+                <!-- LINHA só com o Bairro (sobrou espaço)-->
+                <div class="linha d-flex align-items-start mb-3">
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Bairro</h6>
+                        <input id="bairro" type="text" class=" form-control" placeholder="Bairro" name="bairro">
+                    </div>
+                </div>
+
+                <div class="linha d-flex align-items-start mb-3">
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Cidade</h6>
+                        <input id="cidade" type="text" class=" form-control" placeholder="Cidade" name="cidade">
+                    </div>
+
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">UF</h6>
+                        <select id="uf" class="form-control form-select mb-2" name="uf">
+                            <option value="" disabled selected>UF</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="linha d-flex align-items-start mb-3">
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-50">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7">Celular</h6>
+                        <input id="telefone" type="tel" class="form-control" placeholder="Telefone" name="telefone">
+                    </div>
+                </div>
+                
+                <!--
+                <div class="linha d-flex align-items-start mb-3">
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-100">
+                        
+                        <input id="email" type="hidden" class="form-control" placeholder="E-Mail" name="email">
+                    </div>
+                </div>
+
+                
+                <div class="linha d-flex align-items-start mb-3">
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-100">
+                        <h6 class="fw-bold w-50 m-0 ml-1 fs-7">Nova Senha</h6>
+                        <input id="password" type="text" class="form-control" placeholder="Senha" name="password">
+                    </div>
+                    
+                    <div class="input-1 d-flex flex-column align-items-start mx-2 w-100">
+                        <h6 class="fw-bold w-25 m-0 ml-1 fs-7 w-100">Confirmar Senha</h6>
+                        <input id="conf_password" type="password" class="form-control" placeholder="Confirmar Senha">
+                    </div>
+                    
+                </div>
+                -->
+
+                <button id="submit" class="btn bg-verde-claro align-self-end mt-3 mx-2 w-50 fw-bold">Concluir Alteração</button>
+            </div>
+        </form>
+        <form>
+            
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../../static/js/cooperativa/alterarCooperativa.js"></script>
+    <script src="../../static/js/utilitarios/notificacao.js"></script>
+</body>
+</html>

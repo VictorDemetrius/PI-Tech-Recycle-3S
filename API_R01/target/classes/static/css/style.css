@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  .card {
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  .card-header {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  

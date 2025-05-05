@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/theme.css" />
+    <link rel="stylesheet" href="../static/css/styleTodasLojas.css" />
+
+    <title>Todas Lojas</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mx-2 shadow-sm" style="height: 10%">
+      <div class="container-fluid">
+        <div class="col-sm-2">
+          <a class="navbar-brand" href="#">
+            <img class="logo-menu" src="../static/imgs/Logo.svg" />
+          </a>
+        </div>
+
+        <div class="col-sm-7 d-flex justify-content-start align-items-center text-center">
+          <div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-start" id="navbarNav">
+              <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item ml-0 mr-3" style="transition: 0.5s">
+                  <a class="botao nav-link px-2 text-dark" href="./configuracaoUsuario.html"><h6 class="m-0 fw-bold fs-7" data-url="../template/configuracaoUsuario.html">Configurações da Conta</h6></a>
+                </li>
+                <li class="nav-item mx-3">
+                  <a class="nav-link px-2 text-white bg-dark border rounded-pill" href="#"><h6 class="m-0 fw-bold fs-7">Ver Promoções Ativas</h6></a>
+                </li>
+                <li class="nav-item mx-3">
+                  <span class="d-flex align-items-center justify-content-center" href="#">
+                    <img src="../static/imgs/moedas-verde.png" style="width: 2rem; height: 2rem; z-index: 5" />
+                    <h6 class="py-1 px-4 text-dark m-0 fw-bold fs-7 border border-dark border-1" style="padding-left: 1.5rem; transform: translateX(-1rem); z-index: 4">Pontos</h6>
+                    <h6 class="py-1 px-3 text-dark m-0 fw-bold fs-7 border border-dark rounded-right border-left-0 text-right" style="width: 7rem; padding-left: 1.5rem; transform: translateX(-1.3rem)">3000</h6>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3 d-flex justify-content-end align-items-center">
+          <h6 class="mx-3 my-0 fw-bold">Reryson Andrade</h6>
+          <span class="rounded-circle text-white bg-azul-escuro d-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem">
+            <h4 class="m-0 p-0">R</h4>
+          </span>
+          <a href="./telaHome.html"><h6 class="my-0 ml-3 px-2 btn btn-link">Sair</h6> </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid p-0">
+      <div class="barraPesquisa bg-verde-claro">
+        <p class="pesquisarLabel">Pesquisar</p>
+        <div class="pesquisarInput">
+          <div class="input-group">
+            <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" id="dropdown-toggle-button" aria-expanded="false">Últimas lojas pesquisadas</button>
+            <ul class="dropdown-menu" id="custom-dropdown-menu">
+              <li><a class="dropdown-item" href="#">Loja 01</a></li>
+              <li><a class="dropdown-item" href="#">Loja 02</a></li>
+              <li><a class="dropdown-item" href="#">Loja 03</a></li>
+              <li><a class="dropdown-item" href="#">Loja 04</a></li>
+            </ul>
+            <input type="text" class="form-control border border-black" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="bg-azul-escuro p-4">
+      <div class="container-fluid">
+        <div class="content-todas-lojas">
+          <div class="texto-lojas">
+            <p class="bemVindo">Todas Lojas</p>
+            <p class="textoLojasAtivas">Veja todas as lojas disponíveis</p>
+            <div class="container-ordenar-select">
+              <p class="texto-Ordenar">Ordenar por:</p>
+              <select class="form-select ordenar-select" aria-label="Default select example">
+                <option selected>Ordem alfabética</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cards-tickets">
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+          </div>
+          <div class="cards-tickets">
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+          </div>
+          <div class="cards-tickets">
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+            <!-- botão loja -->
+            <button class="botao-loja">
+              <p class="icone-Loja"></p>
+              <p class="nome-Loja">Nome da Loja</p>
+              <div class="bg-loja bg-verde-claro">
+                <p class="promocao-Loja">Ver promoções desta loja</p>
+              </div>
+            </button>
+          </div>
+        </div>
+        <nav aria-label="paginacao-promocao">
+          <ul class="pagination paginacao-promocao black">
+            <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="bg-azul-claro p-3">
+      <p class="footer-loja">Se interessou? Veja todas as promoções disponíveis especificas de alguma loja!</p>
+      <button type="button" class="btn-todas-promocoes bg-azul-claro">Ver todas as promoções de alguma loja</button>
+      <button type="button" class="btn-todas-lojas-parceiras bg-azul-claro">Ver todas as promoções</button>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../static/js/MenuUsuario.js"></script>
+    <script src="../static/js/RedirecionarPagina.js"></script>
+  </body>
+</html>

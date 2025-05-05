@@ -1,0 +1,172 @@
+body{
+    background-color: #164B60;
+}
+
+nav{
+    z-index: 3;
+    padding: 0;
+    background-color:#fff;
+}
+
+main{
+    height: 100%;
+    padding: 40px;
+}
+
+hr{
+    margin: 5px 5px;
+}
+
+.atualizar-dados{
+    display: grid;
+    grid-template-columns: 310px 60px 310px 30px 530px;
+    margin: auto;
+}
+
+.form-atualizar-dados{
+    display: grid;
+    grid-template-columns: 310px 310px;
+    grid-template-rows: repeat(8, 75px);
+    justify-content: start;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.dados-usuario{
+    display: grid;
+    align-items: center;
+    grid-template-rows: repeat(11, 50px);
+    grid-column: 5/6;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+}
+
+.nome{
+    grid-row: 1/2;
+}
+
+.cpf{
+    grid-row: 2/3;
+}
+
+.cep{
+    grid-row: 4/5;
+}
+
+.rua{
+    grid-row: 3/4;
+}
+
+.numero{
+    grid-row: 5/6;
+}
+
+.complemento{
+    grid-row: 6/7;
+}
+
+.bairro{
+    grid-row: 7/8;
+}
+
+.cidade{
+    grid-row: 8/9;
+}
+
+.uf{
+    grid-row: 1/2;
+}
+
+.celular{
+    grid-row: 2/3;
+}
+
+.email{
+    grid-row: 3/4;
+}
+
+.nova-senha{
+    grid-row: 4/5;
+}
+
+.confirmar-senha{
+    grid-row: 5/6;
+}
+
+#salvarDados{
+    margin-top: 25px;
+    align-self: center;
+    grid-row: 6/7;
+}
+
+#excluirDados{
+    margin-top: 25px;
+    align-self: center;
+    grid-row: 7/8;
+}
+
+.output-nome{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 1/2;
+}
+
+.output-cpf{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 2/3;
+}
+
+.output-rua{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 3/4;
+}
+
+.output-cep{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 4/5;
+}
+
+.output-numero{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 5/6;
+}
+
+.output-complemento{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 6/7;
+}
+
+.output-bairro{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 7/8;
+}
+
+.output-cidade{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 8/9;
+}
+
+.output-uf{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 9/10;
+}
+
+.output-celular{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 10/11;
+}
+
+.output-email{
+    font-weight: 600;
+    margin: 0px 7px;
+    grid-row: 11/12;
+}

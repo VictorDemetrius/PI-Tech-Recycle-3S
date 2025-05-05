@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/theme.css">
+    <link rel="stylesheet" href="../../static/css/animations.css">
+    <style>
+      body, html{
+        height: 100%;
+      }
+
+      #lista_items_descartados{
+        width: 95%;
+        height: 50%;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      #inputs_adicionar_eletronico{
+        display: grid;
+        grid-template-columns: 5fr 1fr 1fr;
+        gap: 1vh;
+      }
+    </style>
+    <title>Enviar Pontos</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mx-2 shadow-sm" style="height:10%;">
+      <div class="container-fluid">
+        <div class="col-sm-3 d-flex align-items-center">
+            <a class="navbar-brand" href="#"> <img class="logo-menu" alt="Logo da Tech Recycle" src="../../static/imgs/Logo.svg"/> </a>
+            <h4 class="m-0 fw-bold"> ADMIN </h4>
+          </div>
+          
+          <div class="col-sm-6 d-flex justify-content-start align-items-center text-center">
+            <div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-start" id="navbarNav">
+                <ul class="navbar-nav d-flex align-items-center">
+                  <li><a class="nav-link text-dark" href="../menuAdmin.html">Estatísticas</a></li>
+                	<!---->
+                  <li class="nav-item dropdown mx-3">
+                    <a class="dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">Usuário</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="../usuarios/gerenciarUsuarios.html">Lista de Usuários</a></li>
+                    </ul>
+                  </li>
+                  <!---->
+                  <li class="nav-item dropdown mx-3">
+                    <a class="dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lojas</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="./gerenciarEmpresa.html">Lista de Lojas</a></li>
+                      <li><a class="dropdown-item" href="#">Solicitações de Validação</a></li>
+                      <li><a class="dropdown-item" href="./cadastroEmpresa.html">Cadastrar nova Loja</a></li>
+                    </ul>
+                  </li>
+                  <!---->
+                  <li class="nav-item dropdown mx-3">
+                    <a class="dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cooperativas</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="../cooperativas/gerenciarCooperativas.html">Lista de Cooperativas</a></li>
+                      <li><a class="dropdown-item" href="../cooperativas/cadastroCooperativa.html">Cadastrar nova Cooperativa</a></li>
+                      <li><a class="dropdown-item" href="../cooperativas/listaCooperativaDesativada.html">Cooperativas Desativadas</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-3 d-flex justify-content-end align-items-center">
+            <h6 class="mx-3 my-0 fw-bold"> Ulisses Antonelli </h6>
+            <span class="rounded-circle text-white bg-azul-claro d-flex align-items-center justify-content-center" style="width: 2.5rem; height: 2.5rem">
+                <h4 class="m-0 p-0">U</h4>
+            </span>
+            <a href="#"><h6 class="my-0 ml-3 px-2 btn btn-link"> Sair </h6> </a>
+          </div>
+      </div>
+    </nav>
+
+    <main class="h-auto w-100 bg-azul-escuro p-5 d-flex flex-column align-items-center justify-content-center">
+        <!-- FORM BUSCAR USUARIO POR CPF-->
+        <form id="form_buscar_cpf" class="col-md-8 bg-white border rounded rounded-5 p-3 d-flex flex-column justify-content-start align-items-center">
+            <h2 class="fw-bold mt-3 mb-4 px-3 text-dark">Buscar Usuário</h2>
+            <span class="fw-bold fs-7 mb-4 px-3 text-dark"> Insira o CPF do Usuário que está fazendo o descarte </span>
+            <div class="input-2 d-flex align-items-center mx-2" style="width: 30%;">
+                <h6 class="fw-bold m-0 mx-3 fs-7">CPF</h6>
+                <input id="cnpj" type="text" class="form-control" placeholder="CPF" name="cpf">
+            </div>  
+        </form>
+        
+        <hr style="width: 50%; background-color: white; height: 2px; margin: 5vh 2vh; border-radius: 15px;"></hr>
+        
+        <!-- FORM CARRINHO DE DESCARTE DO USUARIO-->
+        <form id="form_carrinho" class="col-md-8 bg-white border rounded rounded-5 p-3 d-flex flex-column justify-content-start align-items-center">
+            
+            <div id="box_eletornicos" class="d-flex flex-column align-items-center" style="height: 50vw; width: 95%;">
+                <h2 class="fw-bold mt-3 mb-4 px-3 text-dark">Contabilizar Pontos</h2>
+
+                <!-- INPUTS ADICIONAR ELETRONICO AO CARRINHO -->
+                <!-- Estilização está no <head> -->
+                <div id="inputs_adicionar_eletronico" class="input-2 align-items-center align-self-start mx-4" style="width: 55%;">
+                    <div class="mb-3 d-flex flex-column">
+                        <label for="eletronico" class="form-label"> Eletrônico </label>
+                        <select id="eletronico" class="form-control" aria-label="Default select example" name="curso" required>
+                            <option selected disabled value="">--Selecione--</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quantidade" class="form-label"> Quantidade </label>
+                        <input type="number" class="form-control" id="quantidade" min="1" name="quantidade" required>
+                    </div>
+
+                    <div class="mb-3 d-flex flex-column">
+                        <br>
+                        <a id="btn_add" type="submit" class="btn bg-verde-claro mt-2 px-5 align-self-end"> Adicionar </a>
+                    </div>
+                </div>  
+                
+                <!-- CARRINHO (LISTA) DE ITEMS DESCARTADOS -->
+                <!-- Estilização está no <head> -->
+                <div id="lista_items_descartados">
+                    <table class="table">
+                        <caption style="display: none;"> Tabela com uma lista de todos os items que o usuário descartou</caption>
+                        <thead>
+                          <tr style="border: 2px solid #dee2e6;">
+                            <th scope="col" style="width:40%;">Nome</th>
+                            <th scope="col" style="width:20%;">Quantidade</th>
+                            <th scope="col" style="width:30%;">Pontos (Unid.)</th>
+                            <th scope="col" style="width:10%;"></th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbl-corpo">
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr style="width: 95%; margin-top: 0; background-color: #dee2e6; height: 2px; border-radius: 15px;"></hr>
+
+                <!-- TOTAL DE PONTOS QUE SERÃO ADICIONADOS -->
+                <div style="width: 95%; display: flex;" class="">
+                    <h4 style="width: 85%; text-align: end;" class="fw-bold text-black"> Total de Pontos: </h4>
+                    <h4 style="width: 15%; text-align: end;" id="resultado_total_pontos" class="fw-bold text-dark"> 0</h4>
+                </div>
+
+                <!-- BOTÃO LANÇAR PONTOS-->
+                <a id="submit" type="submit" class="btn bg-verde-claro align-self-end mb-2 mx-2 my-5 w-25 fw-bold">Enviar Pontos</a>
+            </div>
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../../static/js/empresa/adicionarPontos.js"></script>
+    <script src="../../static/js/utilitarios/notificacao.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+
+main{
+    background-color: #164B60;
+    height: 100vh;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 1fr 350px 80px 350px 1fr;
+    grid-template-rows: 8vh 5vh;
+    height: 20vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.barraPesquisa{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.pesquisarLabel{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #164B60;
+    margin: 0 auto;
+}
+
+.pesquisarInput{
+    width: 85vw;
+    margin: 0 auto;
+    justify-self: end;
+}
+
+.content-todas-lojas{
+    display: grid;
+    grid-template-rows: 75px 200px 200px 200px;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    margin: 0 auto;
+}
+
+.texto-lojas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 75px;
+    align-items: center;
+    width: max-content;
+    
+}
+
+.bemVindo{
+    font-weight: 200;
+    font-size: 1.8rem;
+    color: #ffffff;
+    grid-column: 1/2;
+    margin: 0 7px;
+    justify-self: start;
+}
+
+.textoLojasAtivas{
+    font-weight: 200;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin: 0;
+    grid-column: 2/4;
+    justify-self: center;
+}
+
+.container-ordenar-select{
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    align-items: center;
+    justify-content: center;
+    grid-column: 4/5;
+    justify-self: center;
+    
+}
+
+.texto-Ordenar{
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 0 10px;
+    grid-column: 1/2;
+
+}
+
+.ordenar-select{
+    width: 200px;
+    grid-column: 2/3;
+}
+
+.cards-tickets{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    column-gap: 40px;
+}
+
+.botao-ticket{
+    height: 150px;
+    width: 300px;
+    background-color: #164B60;
+    color: #164B60;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+.ticket{
+    width: 300px;
+    height: 150px;
+    background-color: #164B60;
+    background-image: url('../imgs/Cupom.png');
+    background-size: 100%;
+    font-family: 'DM Sans', sans-serif;
+    color: #164B60;
+}
+
+.icone{
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: 50px 150px;
+    align-items: center;
+    justify-content: end; 
+    gap: 10px;
+    margin-right: 15px;
+}
+
+.iconeLoja{
+    background-image: url('../imgs/img-loja.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.tituloloja {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+}
+
+.titulo, .loja{
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #164B60;
+    margin: 1.5px;
+    height: 20px;
+}
+
+.promocaoPontos{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 230px;
+    grid-template-rows: 50px 40px;
+    justify-items: center;
+    justify-content: end;
+    margin-top: 10px;
+    row-gap: 5px;
+}
+
+.promocao{
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #164B60;
+    margin: 1.5px;
+    height: 20px;
+}
+
+.pontos{
+    width: 200px;
+    color: #fff;
+    background-color: #164B60;
+    border-radius: 50px;
+}
+
+.cards-loja{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    column-gap: 40px;  
+}
+
+.botao-loja{
+    height: 150px;
+    width: 300px;
+    background-color: #ffffff;
+    color: #164B60;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 1fr 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+.icone-Loja{
+    background-image: url('../imgs/img-loja.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    margin: 0;   
+}
+
+.nome-Loja{
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #164B60;
+    margin: 1.5px;
+    height: 20px;
+    
+}
+
+.bg-loja{
+    display: grid;
+    
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: #164B60;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    border-radius:0px 0px 15px 15px;
+}
+
+.promocao-Loja{
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.paginacao-promocao{
+    margin: 10px 0px;
+    justify-content: center;
+    
+}
+.page-link{
+    color: #000; 
+}
+
+.footer-loja{
+    font-weight:800;
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    grid-column: 1/6;
+}
+
+.btn-todas-promocoes{
+    padding: 5px;
+    width: 350px;
+    border-radius: 8px;
+    grid-column: 2/3;
+}
+
+.btn-todas-lojas-parceiras{
+    padding: 5px;
+    width: 350px;
+    border-radius: 8px;
+    grid-column: 4/5;
+} 
+
